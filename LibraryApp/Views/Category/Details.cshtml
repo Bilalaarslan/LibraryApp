@@ -1,0 +1,49 @@
+﻿
+@*neden List yapınca hata veriyor da IEnımerable yapınca hata vermiyor? *@
+
+@model List<LibraryApp.Entity.ViewsModels.CategoryDetailsVM>
+
+
+
+
+
+<h3>@Model.FirstOrDefault().CategoryName Details</h3>
+
+
+<div>
+
+    <table class=table border=1 style="background-color:lightgrey">
+        <thead>
+            <tr>
+                @*<th>Category Name</th>*@
+                <th>Books Name</th>
+                <th>Writer Full Name</th>
+                <th>Point</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>@item.CategoryName</td>*@
+                    <td>@item.BookName</td>
+                    <td>@item.WriterFullName</td>
+                    <td>@item.Point</td>
+                    
+
+                </tr>
+
+            }
+
+
+
+    </table>
+
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

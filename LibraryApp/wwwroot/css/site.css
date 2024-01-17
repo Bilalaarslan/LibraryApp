@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.navbar-brand {
+    color: #ffc107;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.nav-link {
+    scroll-padding-top: 3px;
+    color: white;
+    font-size: x-large;
+}
+.mainphoto
+ {
+    max-width: 100%;
+    height: auto;
+}

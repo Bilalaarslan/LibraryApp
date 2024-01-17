@@ -1,0 +1,59 @@
+﻿@*neden List yapınca hata veriyor da IEnımerable yapınca hata vermiyor? *@
+
+@model IQueryable<LibraryApp.Entity.ViewsModels.WriterDetailsVM>
+
+
+
+     @*kitapsız yazarlar hata vermekte neden sor?*@
+
+
+@if (Model.FirstOrDefault()!=null)
+				{
+    <h3>"@Model.FirstOrDefault().WriterFullName Details"</h3>
+				}
+				else
+				{
+
+    <h3><u>"The Author's Data is not Found"</u></h3>
+
+				}
+
+<div>
+
+    <table class=table border=1 style="background-color:lightgrey">
+        <thead>
+            <tr>
+                @*<th>Category Name</th>*@
+                <th>Category Name</th>
+                <th>Book Name</th>
+                <th>Point</th>
+                <th>Number Of Page</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                    <tr>
+                    @*<td>@item.CategoryName</td>*@
+                        <td>@item.CategoryName</td>
+                        <td>@item.BookName</td>
+                        <td>@item.Point</td>
+                        <td>@item.NumberOfPage</td>
+
+
+                    </tr>
+
+            }
+
+
+
+    </table>
+
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
